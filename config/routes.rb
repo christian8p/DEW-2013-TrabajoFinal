@@ -1,4 +1,36 @@
 DEW2013Trabajofinal::Application.routes.draw do
+  resources :people
+
+
+  resources :comments
+
+
+  resources :posts
+
+
+  resources :users
+
+
+  resources :places
+
+
+  resources :tournaments
+
+
+  get "tournament/index"
+
+  get "tournament/show"
+
+  get "tournament/new"
+
+  get "tournament/create"
+
+  get "tournament/edit"
+
+  get "tournament/update"
+
+  get "tournament/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
