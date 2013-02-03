@@ -26,6 +26,8 @@
   <div class="field">
     <%= f.label :date_event %><br />
     <%= f.date_select :date_event %>
+<%= f.date_select :date_event, :as => :time_picker %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
