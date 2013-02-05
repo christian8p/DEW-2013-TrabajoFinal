@@ -1,33 +1,38 @@
 <div class="center hero-unit">
-  <h1>Tournaments</h1>
-  <table>
-  <tr>
-    <th>Name</th>
-    <th>Id</th>
-    <th>Number participants</th>
-    <th>Date event</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+  <h3>Tournaments</h3>
+  
 <% @tournaments.each do |tournament| %>
-  <tr>
-    <td><%= tournament.name %></td>
-    <td><%= tournament.id %></td>
-    <td><%= tournament.number_participants %></td>
-    <td><%= tournament.date_event %></td>
-    <td><%= link_to 'Show', tournament %></td>
-    <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
-    <td><%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Tournament', new_tournament_path %>
+<div class="well well-large">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <ul class="thumbnails">
+        <li class="span10">
+          <div class="thumbnail">
+            <img <%= link_to image_tag(tournament.image) %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="span8">
+      <fieldset>
+    <legend><%= tournament.name %></legend>
+    <label>Max Participants: <%= tournament.MaxParticipants %></label>
+    <label>Participants: <%= tournament.number_participants %></label>
+    <small>Date: <%= tournament.date_event.strftime("%d %b. %Y") %></small><br>
+    <small>Time: <%= tournament.date_event.strftime("%H:%M") %></small>
+    <small>Place: <%= tournament.place.Name %></small>
+    <p>
+<%= link_to 'Show', tournament %>
+    </p>
+  </fieldset>
+    </div>
+  </div>
 </div>
 
+ </div>
+ <br/>
+<% end %>
+</div>
 
 

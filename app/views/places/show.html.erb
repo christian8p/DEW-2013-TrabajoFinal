@@ -1,30 +1,35 @@
 <%= stylesheet_link_tag 'gmaps4rails' %>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @place.Name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @place.address %>
-</p>
-
-<p>
-  <b>Googlemapsaddress:</b>
-  <%= @place.googleMapsAddress %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @place.phone %>
-</p>
-<p>
-  <b>Phone:</b>
-  <%= @place.country %>
-</p>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+<div class="center hero-unit">
+  <h3>Place: <%= @place.Name %></h3>
+  <div class="well well-large">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span7">
+      <%= link_to 'Back to Places', places_path %><br><br>
+      <ul class="thumbnails">
+        <li class="span6">
+          <div class="thumbnail">
+            <img <%= link_to image_tag(@place.imagen) %>
+          </div>
+        </li>
+      </ul>
+      <address>
+        <strong>Address: <%= @place.address %></strong><br>
+        City: <%= @place.city %><br>
+        Country: <%= @place.country %><br>
+        <abbr title="Phone">Ph:</abbr> <%= @place.phone %>
+      </address>
+      
+    </div>
+    <div class="span4">
+      <br><br>
+      <strong>Available Tournaments: </strong><br>
+      <ul>
+        <% @place.tournaments.each do |tournament| %>
+          <li><%= tournament.name %></li> 
+      <% end %>
+      </ul>
+    </div>
+</div>
+<small>This Place on Google Maps</small>
 <%= gmaps4rails(@json)%>

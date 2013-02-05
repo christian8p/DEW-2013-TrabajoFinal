@@ -14,10 +14,29 @@
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
-//   body.active_admin {
-//      .status_tag { background: #6090DB; }
-//   }
-//
+body.active_admin {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 150%;
+  font-size: 72%;
+  background-color: #A4A4A4;
+  margin: 0;
+  padding: 0;
+  color: #323537;
+}
+
+body.active_admin .blank_slate_container .blank_slate {
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+-webkit-font-smoothing: antialiased;
+border: 1px dashed #dadada;
+color: black;
+display: inline-block;
+font-size: 1.2em;
+font-weight: bold;
+padding: 14px 25px;
+text-align: center;
+}
 // Notice that Active Admin CSS rules are nested within a
 // 'body.active_admin' selector to prevent conflicts with
 // other pages in the app. It is best to wrap your changes in a 

@@ -1,25 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="center hero-unit">
+  <h3><%= @tournament.name %></h3>
+  	<div class="well well-large">
+		<div class="container-fluid">
+		  <div class="row-fluid">
+		  	<div class="span4">
+		      <ul class="thumbnails">
+		        <li class="span6">
+		          <div class="thumbnail">
+		            <img <%= link_to image_tag(@tournament.image) %>
+		          </div>
+		        </li>
+		      </ul>      
+    		</div>
+    		<div class="span4">
+		      <h4>Place: <%= @tournament.place.Name %></h4><br>
+		      <ul class="inline">
+  				<li>Date : <%= @tournament.date_event.strftime("%d %b. %Y") %></li>
+  				<li>Time : <%= @tournament.date_event.strftime("%H:%M") %></li>
+			  </ul><br>
+		      <strong>Max Participants: <%= @tournament.MaxParticipants %></strong><br>
+		      <strong>Total Participants: <%= @tournament.number_participants %></strong><br>
+		    </div>	
+		  </div>
+		</div>
+	</div>
+	<%= link_to 'Back to Tournaments', tournaments_path %><br><br>
+	<h4>Comments about this Tournament</h4>
+	<div class="well well-large">
+	<div class="container-fluid">
+	<div class="row-fluid">
+		<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+</blockquote>
+	</div>
+	</div>
+	</div>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @tournament.name %>
-</p>
-
-<p>
-  <b>Id:</b>
-  <%= @tournament.id %>
-</p>
-
-<p>
-  <b>Number participants:</b>
-  <%= @tournament.number_participants %>
-</p>
-
-<p>
-  <b>Date event:</b>
-  <%= @tournament.date_event %>
-</p>
-
-
-<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
-<%= link_to 'Back', tournaments_path %>
