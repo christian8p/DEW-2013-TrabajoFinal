@@ -17,11 +17,11 @@
     <div class="span8">
       <fieldset>
     <legend><%= tournament.name %></legend>
+    <h4>Place: <%= tournament.place.name %></h4>
     <label>Max Participants: <%= tournament.MaxParticipants %></label>
     <label>Participants: <%= tournament.number_participants %></label>
     <small>Date: <%= tournament.date_event.strftime("%d %b. %Y") %></small><br>
     <small>Time: <%= tournament.date_event.strftime("%H:%M") %></small>
-    <small>Place: <%= tournament.place.Name %></small>
     <p>
 <%= link_to 'Show', tournament %>
     </p>

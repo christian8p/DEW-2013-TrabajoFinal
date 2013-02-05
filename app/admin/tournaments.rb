@@ -1,5 +1,5 @@
 ActiveAdmin.register Tournament do
-  index do
+    index do
   	column :name
   	column :number_participants
   	column :date_event

@@ -7,6 +7,7 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'gmaps4rails'
 gem 'geokit-rails3'
 gem 'country-select'
+gem "seed_dump", "~> 0.4.2"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

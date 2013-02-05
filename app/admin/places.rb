@@ -1,6 +1,6 @@
 ActiveAdmin.register Place do
     index do
-  	column :Name
+  	column :name
   	column :address
   	column :phone
   	column :imagen

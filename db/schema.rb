@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205143442) do
+ActiveRecord::Schema.define(:version => 20130205193440) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,11 +47,14 @@ ActiveRecord::Schema.define(:version => 20130205143442) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "comments", :force => true do |t|
-    t.integer  "id_parent"
-    t.text     "text_comment"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "comments", ["tournament_id"], :name => "index_comments_on_tournament_id"
 
   create_table "people", :force => true do |t|
     t.string   "name"
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20130205143442) do
   end
 
   create_table "places", :force => true do |t|
-    t.string   "Name"
+    t.string   "name"
     t.string   "address"
     t.string   "googleMapsAddress"
     t.string   "phone"
@@ -81,12 +84,6 @@ ActiveRecord::Schema.define(:version => 20130205143442) do
     t.string   "zip"
     t.string   "city"
     t.string   "country"
-  end
-
-  create_table "posts", :force => true do |t|
-    t.text     "text_comment"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "tournaments", :force => true do |t|

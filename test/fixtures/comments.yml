@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id: 1
-  id_parent: 1
-  text_comment: MyText
+  commenter: MyString
+  body: MyText
+  tournament: 
 
 two:
-  id: 1
-  id_parent: 1
-  text_comment: MyText
+  commenter: MyString
+  body: MyText
+  tournament: 

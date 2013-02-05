@@ -16,17 +16,15 @@ DEW2013Trabajofinal::Application.routes.draw do
   resources :comments
 
 
-  resources :posts
-
-
   resources :users
 
 
   resources :places
 
 
-  resources :tournaments
-
+  resources :tournaments do
+    resources :comments
+  end
 
   get "tournament/index"
 

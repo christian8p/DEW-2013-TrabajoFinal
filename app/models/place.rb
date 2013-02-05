@@ -1,6 +1,6 @@
 class Place < ActiveRecord::Base
-  attr_accessible :Name, :address, :googleMapsAddress, :phone, :imagen, :latitude, :longitude, :gmaps,:city,:zip,:country
-  validates :Name,  :presence => true
+  attr_accessible :name, :address, :googleMapsAddress, :phone, :imagen, :latitude, :longitude, :gmaps,:city,:zip,:country
+  validates :name,  :presence => true
   validates :address, :presence => true,
                     :length => { :minimum => 5 }
   validates :imagen,  :presence => true

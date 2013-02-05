@@ -13,7 +13,7 @@
 		      </ul>      
     		</div>
     		<div class="span4">
-		      <h4>Place: <%= @tournament.place.Name %></h4><br>
+		      <h4>Place: <%= @tournament.place.name %></h4><br>
 		      <ul class="inline">
   				<li>Date : <%= @tournament.date_event.strftime("%d %b. %Y") %></li>
   				<li>Time : <%= @tournament.date_event.strftime("%H:%M") %></li>
@@ -24,15 +24,15 @@
 		  </div>
 		</div>
 	</div>
-	<%= link_to 'Back to Tournaments', tournaments_path %><br><br>
+	<%= link_to 'View all Tournaments', tournaments_path %>
 	<h4>Comments about this Tournament</h4>
 	<div class="well well-large">
 	<div class="container-fluid">
 	<div class="row-fluid">
+		<%= render "comments/form" %>
 		<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <small>Someone famous <cite title="Source Title">Source Title</cite></small>
-</blockquote>
+		<%= render @tournament.comments %>
+		</blockquote>
 	</div>
 	</div>
 	</div>
