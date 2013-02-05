@@ -6,6 +6,8 @@ DEW2013Trabajofinal::Application.routes.draw do
   get "home/index"
 
   root :to => "home#index"
+  match 'map' => "places#map"
+
   resources :people
 
 

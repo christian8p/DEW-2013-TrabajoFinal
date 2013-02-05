@@ -56,6 +56,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    country-select (1.1.1)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -67,6 +68,12 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    geokit (1.6.5)
+      multi_json
+    geokit-rails3 (0.1.5)
+      geokit (~> 1.5)
+      rails (~> 3.0)
+    gmaps4rails (1.5.6)
     has_scope (0.5.1)
     hike (1.2.1)
     i18n (0.6.1)
@@ -90,7 +97,7 @@ GEM
       activerecord (~> 3.1)
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
-    mime-types (1.19)
+    mime-types (1.20.1)
     multi_json (1.5.0)
     orm_adapter (0.4.0)
     polyamorous (0.5.0)
@@ -153,6 +160,9 @@ DEPENDENCIES
   activeadmin
   bootstrap-sass (= 2.1)
   coffee-rails (~> 3.2.1)
+  country-select
+  geokit-rails3
+  gmaps4rails
   jquery-rails
   meta_search (>= 1.1.0.pre)
   rails (= 3.2.11)

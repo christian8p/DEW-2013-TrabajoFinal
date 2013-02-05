@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 section {
@@ -18,13 +18,6 @@ textarea {
   resize: vertical;
 }
 
-.center {
-  text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
-}
 
 /* typography */
 
@@ -43,7 +36,7 @@ h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-weight: normal;
   color: #999;
 }
@@ -71,6 +64,7 @@ p {
   color: #fff;
   text-decoration: none;
 }
+
 
 /* footer */
 
