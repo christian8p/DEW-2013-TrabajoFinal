@@ -43,6 +43,51 @@ DEW2013Trabajofinal::Application.routes.draw do
 
   get "tournament/destroy"
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  
+
+  get "home/index"
+
+  root :to => "home#index"
+  match 'map' => "places#map"
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
+  resources :people
+
+
+  resources :comments
+
+
+  resources :users
+
+
+  resources :places
+
+
+  resources :tournaments do
+    resources :comments
+  end
+
+  get "tournament/index"
+
+  get "tournament/show"
+
+  get "tournament/new"
+
+  get "tournament/create"
+
+  get "tournament/edit"
+
+  get "tournament/update"
+
+  get "tournament/destroy"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
