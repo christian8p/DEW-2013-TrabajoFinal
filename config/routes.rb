@@ -10,6 +10,9 @@ DEW2013Trabajofinal::Application.routes.draw do
   root :to => "home#index"
   match 'map' => "places#map"
 
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
   resources :people
 
 
